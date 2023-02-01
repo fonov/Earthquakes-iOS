@@ -38,4 +38,10 @@ final class EarthquakeTests: XCTestCase {
     XCTAssertEqual(firstQuake.time.timeIntervalSince1970, TimeInterval(1636129710550)/1000, accuracy: 0.00001)
     XCTAssertEqual(firstQuake.code, "73649170")
   }
+
+  func testQuakeDetailsDecoder() throws {
+    let decoded = try JSONDecoder().decode(QuakeLocation.self, from: testDetail_hv72783692)
+    XCTAssertEqual(decoded.latitude, 19.2189998626709, accuracy: 1e-11)
+    XCTAssertEqual(decoded.longitude, -155.434173583984, accuracy: 1e-11)
+  }
 }
