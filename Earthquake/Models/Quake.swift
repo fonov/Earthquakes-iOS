@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Quake {
+struct Quake: Equatable {
   let magnitude: Double
   let place: String
   let time: Date

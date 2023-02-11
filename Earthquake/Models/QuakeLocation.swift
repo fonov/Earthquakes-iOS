@@ -28,6 +28,16 @@ struct QuakeLocation: Decodable {
     var latitude: Double
     var longitude: Double
   }
+
+  init(latitude: Double, longitude: Double) {
+    properties = RootProperties(products: Products(origin: [Origin(properties: OriginProperties(latitude: latitude, longitude: longitude))]))
+  }
+}
+
+extension QuakeLocation: Equatable {
+  static func == (lhs: QuakeLocation, rhs: QuakeLocation) -> Bool {
+    lhs.latitude == rhs.latitude && lhs.longitude == rhs.longitude
+  }
 }
 
 extension QuakeLocation.OriginProperties: Decodable {
