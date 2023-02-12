@@ -24,6 +24,7 @@
 		A6317F602986E15C003F57CC /* QuakeLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6317F5F2986E15C003F57CC /* QuakeLocation.swift */; };
 		A6317F62298A400B003F57CC /* HTTPDataDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6317F61298A400B003F57CC /* HTTPDataDownloader.swift */; };
 		A6317F64298A428A003F57CC /* QuakeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6317F63298A428A003F57CC /* QuakeClient.swift */; };
+		A6AEBB1D29993EC900446A93 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A6AEBB1B29993EC900446A93 /* Localizable.strings */; };
 		A6C2A081298B9BF7001C52CE /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6317F5B298680B9003F57CC /* TestData.swift */; };
 		A6C2A083298B9C56001C52CE /* TestDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C2A082298B9C56001C52CE /* TestDownloader.swift */; };
 		A6C2A0BE298E6967001C52CE /* QuakesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C2A0BD298E6967001C52CE /* QuakesProvider.swift */; };
@@ -80,6 +81,9 @@
 		A6317F5F2986E15C003F57CC /* QuakeLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeLocation.swift; sourceTree = "<group>"; };
 		A6317F61298A400B003F57CC /* HTTPDataDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPDataDownloader.swift; sourceTree = "<group>"; };
 		A6317F63298A428A003F57CC /* QuakeClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeClient.swift; sourceTree = "<group>"; };
+		A6AEBB10299937D200446A93 /* Earthquake.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Earthquake.xctestplan; sourceTree = "<group>"; };
+		A6AEBB1C29993EC900446A93 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A6AEBB1E29993F7F00446A93 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A6C2A082298B9C56001C52CE /* TestDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDownloader.swift; sourceTree = "<group>"; };
 		A6C2A0BD298E6967001C52CE /* QuakesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakesProvider.swift; sourceTree = "<group>"; };
 		A6C2A0C2298E6B09001C52CE /* Quakes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quakes.swift; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 		A6317F1A2982618A003F57CC /* Earthquake */ = {
 			isa = PBXGroup;
 			children = (
+				A6AEBB1B29993EC900446A93 /* Localizable.strings */,
 				A6C2A0DD298FF936001C52CE /* Cache */,
 				A6C2A0BF298E6AEF001C52CE /* Views */,
 				A6317F4529865E0C003F57CC /* Models */,
@@ -195,6 +200,7 @@
 			children = (
 				A6317F592986805B003F57CC /* SampleData.json */,
 				A6317F5229867F94003F57CC /* EarthquakeTests.swift */,
+				A6AEBB10299937D200446A93 /* Earthquake.xctestplan */,
 			);
 			path = EarthquakeTests;
 			sourceTree = "<group>";
@@ -320,6 +326,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = A6317F0F2982618A003F57CC;
 			productRefGroup = A6317F192982618A003F57CC /* Products */;
@@ -345,6 +352,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6AEBB1D29993EC900446A93 /* Localizable.strings in Resources */,
 				A6317F232982618B003F57CC /* Preview Assets.xcassets in Resources */,
 				A6317F202982618B003F57CC /* Assets.xcassets in Resources */,
 			);
@@ -425,6 +433,18 @@
 			targetProxy = A6317F5429867F94003F57CC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A6AEBB1B29993EC900446A93 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6AEBB1C29993EC900446A93 /* ru */,
+				A6AEBB1E29993F7F00446A93 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A608CA4B2999201E008D9358 /* Debug */ = {

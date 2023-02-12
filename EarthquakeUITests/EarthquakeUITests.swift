@@ -57,4 +57,18 @@ final class EarthquakeUITests: XCTestCase {
       .label
     )
   }
+
+  func testBottomBarLabel() {
+    let locale = CommandLine.arguments[1]
+
+    if locale == "ru" {
+      let isExist = app.staticTexts["Обновлено сейчас"].waitForExistence(timeout: 10)
+      XCTAssert(isExist)
+      XCTAssert(app.staticTexts["Обновлено сейчас"].isHittable)
+    } else {
+      let isExist = app.staticTexts["Updated now"].waitForExistence(timeout: 10)
+      XCTAssert(isExist)
+      XCTAssert(app.staticTexts["Updated now"].isHittable)
+    }
+  }
 }

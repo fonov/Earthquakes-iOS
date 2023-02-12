@@ -1,0 +1,57 @@
+{
+  "configurations" : [
+    {
+      "id" : "0E644357-A97E-4F1E-91EB-03F2AFD31EE1",
+      "name" : "English",
+      "options" : {
+        "commandLineArgumentEntries" : [
+          {
+            "argument" : "en"
+          }
+        ],
+        "language" : "en",
+        "region" : "US"
+      }
+    },
+    {
+      "id" : "B4F52013-A34C-4A0C-B408-402144F776C0",
+      "name" : "Russian",
+      "options" : {
+        "commandLineArgumentEntries" : [
+          {
+            "argument" : "ru"
+          }
+        ],
+        "language" : "ru",
+        "region" : "RU"
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Earthquake.xcodeproj",
+      "identifier" : "A6317F172982618A003F57CC",
+      "name" : "Earthquake"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Earthquake.xcodeproj",
+        "identifier" : "A6317F4F29867F93003F57CC",
+        "name" : "EarthquakeTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Earthquake.xcodeproj",
+        "identifier" : "A608CA412999201D008D9358",
+        "name" : "EarthquakeUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
