@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "EarthquakeUITests.testQuakeDetail():EarthquakeUITests.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "firstRow.label">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "EarthquakeTests.testClientDoesFetchEarthquakeData():EarthquakeTests.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "QuakesProvider.location(for:):QuakesProvider.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

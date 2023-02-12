@@ -29,6 +29,7 @@ struct Quakes: View {
               QuakeDetail(quake: quake)
             } label: {
               QuakeRow(quake: quake)
+                .accessibilityIdentifier("quake_row")
             }
           }
           .onDelete(perform: deleteQuakes(at:))

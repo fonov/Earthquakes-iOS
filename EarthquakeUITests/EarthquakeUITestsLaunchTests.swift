@@ -2,7 +2,7 @@
 //  EarthquakeUITestsLaunchTests.swift
 //  EarthquakeUITests
 //
-//  Created by Sergei Fonov on 26.01.23.
+//  Created by Sergei Fonov on 12.02.23.
 //
 
 import XCTest
