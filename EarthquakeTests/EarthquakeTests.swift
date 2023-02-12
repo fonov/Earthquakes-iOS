@@ -49,5 +49,34 @@ final class EarthquakeTests: XCTestCase {
     let numberOfQuakes = 6
 
     XCTAssertEqual(quakes.count, numberOfQuakes)
+    XCTAssert(quakes[0].magnitude == 0.34)
+    XCTAssertTrue(quakes[0].magnitude > 0.1)
+    XCTAssertFalse(quakes[0].magnitude > 2)
+  }
+
+  func testClientDoesThrowErrorOnFetch() async throws {
+    let client = QuakeClient(downloader: TestDownloader())
+    let wrongURL = URL(string: "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/undefine.geojson")!
+
+    do {
+      let _ = try await client.quakeLocation(from: wrongURL)
+      XCTFail("Client should throw error")
+    } catch {
+      XCTAssertEqual(error as? QuakeError, .networkError)
+    }
+  }
+
+  func testCompleteQuake() throws {
+    let decoder = JSONDecoder()
+    decoder.dateDecodingStrategy = .millisecondsSince1970
+    let quake = try decoder.decode(Quake.self, from:  testFeature_nc73649170)
+    var quakeWithDetail = quake
+
+    quakeWithDetail.location = try decoder.decode(QuakeLocation.self, from: testDetail_hv72783692)
+
+    XCTAssertNil(quake.location)
+    let location = try XCTUnwrap(quakeWithDetail.location, "Expected QuakeLocation")
+    XCTAssertLessThan(location.longitude, 44)
+    XCTAssertLessThan(location.latitude, 44)
   }
 }

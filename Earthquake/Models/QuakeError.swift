@@ -13,6 +13,12 @@ enum QuakeError: Error {
   case unexpectedError(error: Error)
 }
 
+extension QuakeError: Equatable {
+  static func == (lhs: QuakeError, rhs: QuakeError) -> Bool {
+    lhs.errorDescription == rhs.errorDescription
+  }
+}
+
 extension QuakeError: LocalizedError {
   var errorDescription: String? {
     switch self {
