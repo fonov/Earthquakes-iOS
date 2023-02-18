@@ -88,13 +88,15 @@ final class EarthquakeUITests: XCTestCase {
   }
 
   func testMagnitude() throws {
-    for row in app.collectionViews.allElementsBoundByIndex {
-      let magnitude = row.staticTexts.firstMatch
+    for index in 0..<app.collectionViews.children(matching: .cell).count {
+      try XCTContext.runActivity(named: "Check magnitude value of \(index+1) row") { _ throws in
+        let magnitude = app.collectionViews.children(matching: .cell).element(boundBy: 1).staticTexts.firstMatch
 
-      let magnitudeValue = try XCTUnwrap(Double(magnitude.label.replacingOccurrences(of: ",", with: ".")))
+        let magnitudeValue = try XCTUnwrap(Double(magnitude.label.replacingOccurrences(of: ",", with: ".")))
 
-      XCTAssertGreaterThanOrEqual(magnitudeValue, 0.1)
-      XCTAssertLessThanOrEqual(magnitudeValue, 10.0)
+        XCTAssertGreaterThanOrEqual(magnitudeValue, 0.1)
+        XCTAssertLessThanOrEqual(magnitudeValue, 10.0)
+      }
     }
   }
 }
