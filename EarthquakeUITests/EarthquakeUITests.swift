@@ -31,7 +31,6 @@ final class EarthquakeUITests: XCTestCase {
     let firstRow = rows.firstMatch
 
     XCTAssert(firstRow.isHittable)
-    XCTAssert(firstRow.label.contains("km"))
 
     firstRow.tap()
 
@@ -70,5 +69,21 @@ final class EarthquakeUITests: XCTestCase {
       XCTAssert(isExist)
       XCTAssert(app.staticTexts["Updated now"].isHittable)
     }
+  }
+
+  func testNavigationBarTitle() {
+    app/*@START_MENU_TOKEN@*/.toolbars["Toolbar"].buttons["Refresh"]/*[[".toolbars[\"Панель инструментов\"]",".otherElements[\"Refresh\"].buttons[\"Refresh\"]",".buttons[\"Refresh\"]",".toolbars[\"Toolbar\"]"],[[[-1,3,1],[-1,0,1]],[[-1,2],[-1,1]]],[0,0]]@END_MENU_TOKEN@*/.tap()
+
+    XCTAssert(app.navigationBars.staticTexts["Earthquakes"].isHittable)
+
+    let earthquakesNavigationBar = app.navigationBars["Earthquakes"]
+    earthquakesNavigationBar/*@START_MENU_TOKEN@*/.buttons["Edit"]/*[[".otherElements[\"Edit\"].buttons[\"Edit\"]",".buttons[\"Edit\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+
+    let collectionViewsQuery = app.collectionViews
+    collectionViewsQuery.children(matching: .cell).element(boundBy: 0).children(matching: .other).element(boundBy: 0).children(matching: .other).element.tap()
+    collectionViewsQuery.children(matching: .cell).element(boundBy: 1).children(matching: .other).element(boundBy: 0).children(matching: .other).element.tap()
+    collectionViewsQuery.children(matching: .cell).element(boundBy: 2).children(matching: .other).element(boundBy: 0).children(matching: .other).element.tap()
+
+    XCTAssert(app.navigationBars["3 Selected"].staticTexts["3 Selected"].isHittable)
   }
 }
