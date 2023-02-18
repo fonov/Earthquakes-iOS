@@ -86,4 +86,15 @@ final class EarthquakeUITests: XCTestCase {
 
     XCTAssert(app.navigationBars["3 Selected"].staticTexts["3 Selected"].isHittable)
   }
+
+  func testMagnitude() throws {
+    for row in app.collectionViews.allElementsBoundByIndex {
+      let magnitude = row.staticTexts.firstMatch
+
+      let magnitudeValue = try XCTUnwrap(Double(magnitude.label.replacingOccurrences(of: ",", with: ".")))
+
+      XCTAssertGreaterThanOrEqual(magnitudeValue, 0.1)
+      XCTAssertLessThanOrEqual(magnitudeValue, 10.0)
+    }
+  }
 }

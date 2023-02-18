@@ -28,7 +28,6 @@
     }
   ],
   "defaultOptions" : {
-    "codeCoverage" : false,
     "targetForVariableExpansion" : {
       "containerPath" : "container:Earthquake.xcodeproj",
       "identifier" : "A6317F172982618A003F57CC",
